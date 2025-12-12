@@ -87,12 +87,4 @@ Yaygın inanışın aksine, oyunun pahalı olması oyuncular tarafından beğeni
 * **Sonuç:** Pazar doygunluğu artarken, özellikle bağımsız (Indie) geliştiriciler için "görünürlük" (discoverability) sorunu, üretim maliyetinden daha kritik bir problem haline gelmiştir.
 
 ---
-
-## 👥 Takım Üyeleri (Team 6)
-* **Tümay Turhan**
-* Atakan Can
-* Berkay Turhan
-* D. Hazal Tuncay
-
----
 *Bu proje Workintech Data Science Bootcamp kapsamında geliştirilmiştir.*
