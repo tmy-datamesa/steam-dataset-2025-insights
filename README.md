@@ -42,7 +42,7 @@ Bu çalışma, Data Science Bootcamp kapsamında **Team 6** tarafından hazırla
 * **Veri Ambarı:** Google BigQuery (Altyapı)
 
 ## 👥 Takım Üyeleri
-* **Tümay Turhan** - [[LinkedIn Profil Linkin](https://www.linkedin.com/in/tumay-turhan/)]
+* **Tümay Turhan** - [[LinkedIn](https://www.linkedin.com/in/tumay-turhan/)]
 * Atakan Can
 * Berkay Turhan
 * D. Hazal Tuncay
