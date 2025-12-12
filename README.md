@@ -1,53 +1,52 @@
-# 🎮 Steam Pazar Analizi ve Fiyat Tahminleme (2025)
+# 🎮 Steam Market Analytics & Price Prediction 2025
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)
-![Pandas](https://img.shields.io/badge/Library-Pandas-150458)
+![Looker Studio](https://img.shields.io/badge/Visualization-Looker%20Studio-4285F4)
+![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
 ![Status](https://img.shields.io/badge/Durum-Tamamland%C4%B1-green)
 
-## 📌 Proje Özeti
-Bu proje, 240.000'den fazla oyun verisini içeren **Steam 2025 Veri Seti** kullanılarak oyun sektörüne yönelik kapsamlı bir pazar analizi sunmaktadır. Projenin temel amacı; pazar trendlerini belirlemek, fiyatlandırma stratejilerini analiz etmek ve oyunların sistem gereksinimleri, türleri ve yayıncı özellikleri gibi öznitelikleri kullanarak **satış fiyatını tahmin eden bir Makine Öğrenmesi modeli** geliştirmektir.
+## 📊 Canlı Demo / Dashboard
+Projenin interaktif veri görselleştirmelerini ve analiz sonuçlarını canlı incelemek için aşağıdaki linke tıklayın:
 
-Bu çalışma, Data Science Bootcamp kapsamında **Team 6** tarafından hazırlanmıştır.
+### [👉 Steam Analiz Dashboard'unu Görüntüle (Looker Studio)](https://lookerstudio.google.com/reporting/14eafbaa-cbb1-4a15-baf2-8e5f128a12e3)
 
-## 📂 Dosya Yapısı
+---
 
-* `notebooks/01_pazar_buyume_tahmini.ipynb`: Oyun yayınlanma trendlerinin zaman serisi analizi ve gelecek projeksiyonu.
-* `notebooks/02_fiyat_tahmin_modeli.ipynb`: Oyun fiyatlarını tahmin eden Makine Öğrenmesi (Regresyon) modeli.
-* `reports/steam_pazar_analizi_sunumu.pdf`: Detaylı veri görselleştirmeleri ve iş içgörülerini içeren proje sunumu.
+## 📌 Proje Hakkında
+Bu proje, **Team 6** tarafından Steam 2025 veri seti (240.000+ oyun) kullanılarak gerçekleştirilen uçtan uca bir veri bilimi çalışmasıdır. Proje kapsamında; ham veri temizlenmiş, veritabanında modellenmiş, görselleştirilmiş ve oyun fiyatlarını tahmin eden Makine Öğrenmesi modelleri geliştirilmiştir.
 
-## 🚀 Öne Çıkan Özellikler ve Metodoloji
+**Temel Hedef:** Oyun sektöründeki fiyatlandırma dinamiklerini çözmek ve bir oyunun özelliklerine (tür, sistem gereksinimi vb.) göre ideal piyasa fiyatını tahmin etmektir.
 
-### 1. Keşifçi Veri Analizi (EDA) ve Görselleştirme
-* 2014-2025 yılları arasında oyun yayınlanma sayısındaki üstel artış analiz edildi.
-* **Sistem Gereksinimleri** ve **Fiyat** arasındaki güçlü ilişki görselleştirildi.
-* Indie (Bağımsız) ve AAA oyunların fiyatlandırma stratejileri karşılaştırıldı.
+## 📂 Depo İçeriği
 
-### 2. Makine Öğrenmesi Modelleri
-* **Fiyat Tahmin Modeli:** Oyunun `mat_initial_price_usd` (başlangıç fiyatı) değerini tahmin etmek için Regresyon modelleri geliştirildi.
-    * *Kullanılan Öznitelikler (Features):* Çıkış Yılı, Tür (Genre), Minimum RAM/GPU gereksinimi, Geliştirici.
-    * *Algoritma:* Random Forest Regressor / XGBoost.
-* **Pazar Tahmini:** Gelecek yıllarda platforma eklenecek oyun hacmini öngören zaman serisi analizi yapıldı.
+Bu repo aşağıdaki çalışmaları içerir:
 
-## 📊 Temel İçgörüler
-* **Oyun Enflasyonu:** Ortalama oyun fiyatları **2021'de $8.28** iken **2025'te $10.15** seviyesine yükselmiştir.
-* **Donanım Maliyeti:** Yüksek sistem gereksinimi isteyen oyunlar, düşük sistem isteyenlere göre belirgin şekilde daha yüksek fiyatla pazara girmektedir.
-* **Fiyat-Kalite Paradoksu:** Fiyat ile Metacritic puanları arasında sadece zayıf bir korelasyon (0.23) bulunmuştur; yani yüksek fiyat her zaman yüksek beğeni anlamına gelmemektedir.
+* **`notebooks/Model_1_Pazar_Tahmini.ipynb`**: Oyun dünyasının büyüme trendlerini inceleyen zaman serisi analizi.
+* **`notebooks/Steam_Oyun_Fiyatı_Tahminlemesi_Modeli.ipynb`**: Oyun özelliklerine göre fiyat tahmini yapan Regresyon (ML) modeli.
+* **`reports/Steam_Analizi_Data_visualization.pdf`**: Projenin detaylı sunumu, iş içgörüleri ve grafiksel analizler.
 
-## 🛠️ Kullanılan Teknolojiler
-* **Dil:** Python
-* **Veri İşleme:** Pandas, NumPy
-* **Görselleştirme:** Matplotlib, Seaborn, Looker Studio
-* **Makine Öğrenmesi:** Scikit-Learn
-* **Veri Ambarı:** Google BigQuery (Altyapı)
+## 🚀 Kullanılan Teknolojiler ve Mimari
 
-## 👥 Takım Üyeleri
-* **Tümay Turhan** - [[LinkedIn](https://www.linkedin.com/in/tumay-turhan/)]
+Proje, modern veri yığını (Modern Data Stack) prensiplerine uygun olarak geliştirilmiştir:
+
+1.  **Veri İşleme & ML:** Python (Pandas, Scikit-Learn, XGBoost)
+2.  **Veri Ambarı:** Google BigQuery
+3.  **Veri Modelleme:** dbt (Data Build Tool)
+4.  **Görselleştirme:** Google Looker Studio
+5.  **Proje Yönetimi:** GitHub & Notion
+
+## 📈 Öne Çıkan İçgörüler (Insights)
+
+* **Fiyat Artışı:** Ortalama oyun fiyatları son 4 yılda %22 artış göstererek $10 bandını aşmıştır.
+* **Donanım Etkisi:** "Yüksek Sistem Gereksinimi" isteyen oyunlar, ortalama fiyattan %60 daha yüksek bir etiketle piyasaya girmektedir.
+* **Kalite Yanılgısı:** Veri analizi sonucunda, oyun fiyatı ile Metacritic puanı arasında güçlü bir korelasyon bulunamamıştır. Pahalı oyun, "iyi oyun" garantisi vermemektedir.
+
+## 👥 Takım Üyeleri (Team 6)
+
+* **Tümay Turhan** - [LinkedIn Profiliniz]
 * Atakan Can
 * Berkay Turhan
 * D. Hazal Tuncay
 
-## 🔧 Nasıl Çalıştırılır?
-1. Repoyu klonlayın:
-   ```bash
-   git clone [https://github.com/kullaniciadi/steam-market-analytics-2025.git](https://github.com/kullaniciadi/steam-market-analytics-2025.git)
+---
+*Bu proje eğitim amaçlı olup, kullanılan veriler Kaggle Steam Dataset 2025 kaynağından alınmıştır.*
