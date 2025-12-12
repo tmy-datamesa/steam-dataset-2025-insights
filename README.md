@@ -13,7 +13,6 @@ Projenin interaktif çıktılarına, proje yönetim panellerine ve veri mimarisi
 | :--- | :--- | :--- |
 | 📊 **Dashboard** | **Canlı Rapor (Looker Studio)** | [👉 Raporu Görüntüle](https://lookerstudio.google.com/reporting/14eafbaa-cbb1-4a15-baf2-8e5f128a12e3) |
 | 📝 **Dokümantasyon** | Task Yönetimi & Süreç (Notion) | [👉 Notion Sayfasına Git](https://www.notion.so/2bdcf832f671801bbc18fc2105b09106?v=2bdcf832f67181ce8d3b000c2d86aca0&source=copy_link) |
-| 📑 **Sunum** | Proje Sunumu (Google Slides) | [👉 Sunumu İncele](https://docs.google.com/presentation/d/1HGfu4bR3LUSvg6ZnSncCOTqzpPRXHpb0vpbsEb5n4TY/edit?usp=sharing) |
 | 🗺️ **Şema** | Veri Mimarisi (tldraw) | [👉 Mimariyi Görüntüle](https://www.tldraw.com/f/A1G0ucpf2pwONYo6cEshK?d=v-660.343.2143.1220.page) |
 
 ---
