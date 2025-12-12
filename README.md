@@ -45,13 +45,8 @@ Proje, "Modern Data Stack" prensiplerine uygun olarak bulut tabanlı bir mimarid
 ## 💻 Geliştirme Ortamı (Colab Notebooks)
 Projenin geliştirme aşamasındaki kodlara ve analiz geçmişine aşağıdaki orijinal çalışma dosyalarından erişebilirsiniz:
 
-* **Tümay Turhan:**
     * [📍 Veri Analizi ve Temizleme (Colab)](https://colab.research.google.com/drive/18iWcjIfo1ln9ZBKme1hgVHD3ewA15FJI?usp=sharing)
     * [📍 ML Fiyat Tahmin Modeli (Colab)](https://colab.research.google.com/drive/14pPPDY8fjeyvG1WMxdwVITJl8HpaOktB?usp=sharing)
-* **Atakan Can:**
-    * [📍 Veri Analizi ve BigQuery Entegrasyonu](https://colab.research.google.com/drive/1Npm3eXjAuRlqyh1xjXoa5TEUOHXBZpt2?usp=sharing)
-    * [📍 ML ve Modelleme Çalışmaları](https://colab.research.google.com/drive/1ntBUrkB4TXPWmwplVaXzMEIk-8rlBCLW?usp=sharing)
-
 ---
 
 ## 📂 Depo Dosya Yapısı
