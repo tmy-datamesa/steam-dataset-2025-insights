@@ -1,0 +1,1 @@
+SELECT id, name as publisher_name FROM `workintech-bootcamp-atakan-can.Team6_Steam.publishers` 

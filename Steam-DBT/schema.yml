@@ -1,0 +1,380 @@
+version: 2
+
+models:
+  # =============================================================================
+  # 1. MART KATMANI (Analiz ve Görselleştirme - Dashboard İçin)
+  # =============================================================================
+
+  - name: publisher_performance
+    description: "Yayıncıların (Publisher) toplam oyun sayısı, ciro ve satış bazlı genel performans sıralaması."
+    columns:
+      - name: publisher_name
+        description: "Yayıncı firma adı."
+      - name: total_games_released
+        description: "Yayınladığı toplam oyun sayısı."
+      - name: total_revenue
+        description: "Tüm oyunlarından elde ettiği toplam tahmini ciro (USD)."
+      - name: total_sales
+        description: "Toplam tahmini satış adedi (Unit)."
+      - name: avg_metacritic_score
+        description: "Yayıncının oyunlarının ortalama eleştirmen puanı (Kalite göstergesi)."
+
+
+  - name: publisher_tech_specs
+    description: "Yayıncıların çıkardığı oyunların donanım gereksinimlerine (Low/Mid/High) göre dağılımı."
+    columns:
+      - name: publisher_name
+        description: "Yayıncı firma adı."
+      - name: total_sales_volume
+        description: "Yayıncının toplam satış hacmi ."
+      - name: low_spec_games
+        description: "Düşük sistem (Low) gerektiren oyun sayısı."
+      - name: high_spec_games
+        description: "Yüksek sistem (High) gerektiren oyun sayısı."
+      - name: low_spec_ratio_percent
+        description: "Yayıncının portföyündeki yüksek sistemli oyunların yüzdesi ."
+
+  - name: publisher_dominant_genres
+    description: >
+      Her bir yayıncının oyun sayısı bakımından en aktif olduğu ilk 3 türü (Genre) listeler.
+      Ayrıca bu türlerin yayıncının toplam cirosu içindeki payını (Konsantrasyon Riski) gösterir.
+      "Bu yayıncı sadece tek bir türe mi bel bağlamış?" sorusunun cevabını verir.
+    columns:
+      - name: publisher_name
+        description: "Yayıncı firma adı."
+
+      - name: dominant_genre
+        description: "Yayıncının en çok ürün verdiği ilk 3 oyun türünden biri."
+
+      - name: games_in_dominant_genre
+        description: "Yayıncının bu türde çıkardığı toplam oyun sayısı."
+
+      - name: revenue_from_dominant_genre
+        description: "Sadece bu türden elde edilen tahmini ciro (USD)."
+
+      - name: revenue_share_percent
+        description: >
+          Bu türün getirdiği gelirin, yayıncının toplam gelirine oranı (%).
+          Yüksek oran, yayıncının o türe finansal olarak bağımlı olduğunu gösterir.
+
+  - name: system_req_by_year
+    description: >
+      Yıllara göre oyunların sistem gereksinimlerinin (Low, High vb.) dağılımını ve
+      her bir donanım seviyesinin pazar payını (Ciro ve Satış olarak) gösteren zaman serisi tablosu.
+      "Yüksek sistem isteyen oyunlar daha mı çok kazandırıyor, daha mı çok satıyor?" sorusunun cevabı buradadır.
+    columns:
+      - name: system_req_level
+        description: "Oyunun donanım seviyesi (Low, Medium, High)."
+
+      - name: release_year
+        description: "Analiz edilen yıl (Oyunların çıkış yılı)."
+
+      - name: game_that_released
+        description: "O yıl, o donanım seviyesinde piyasaya sürülen toplam oyun sayısı."
+
+      - name: total_sales
+        description: "O yıl, o donanım seviyesindeki oyunların ulaştığı toplam tahmini satış adedi."
+
+      - name: total_revenue
+        description: "O yıl, o donanım seviyesindeki oyunların yarattığı toplam tahmini ciro (USD)."
+
+  - name: top_genres_by_year
+    description: "Yıllara göre en başarılı oyun türlerinin (Genre) sıralandığı liderlik tablosu."
+    columns:
+      - name: genre
+        description: "Temizlenmiş ve kümelenmiş ana oyun türü (Örn: 'Indie Action', 'RPG')."
+      - name: release_year
+        description: "Oyunların piyasaya sürüldüğü yıl."
+      - name: total_game
+        description: "O yıl bu türde çıkan toplam oyun sayısı."
+      - name: total_revenue
+        description: "Bu türün o yıl yarattığı toplam tahmini ekonomi (Ciro - USD)."
+      - name: total_sales
+        description: "Bu türün o yıl ulaştığı toplam tahmini satış adedi (Unit Sold)."
+      - name: ranking
+        description: "O yılın ciro/satış başarısına göre türün sıralaması (1 = Lider)."
+
+  - name: insights_by_genre
+    description: "Zaman bağımsız olarak, hangi türün pazarın ne kadarına hakim olduğunu gösteren genel özet tablo."
+    columns:
+      - name: genre
+        description: "Temizlenmiş ana oyun türü."
+      - name: total_game
+        description: "Tarih boyunca bu türde çıkan toplam oyun sayısı."
+      - name: total_revenue
+        description: "Tarih boyunca bu türün elde ettiği toplam tahmini ciro."
+      - name: total_sales
+        description: "Tarih boyunca bu türün sattığı toplam kopya sayısı."
+
+  - name: insights_by_game_play
+    description: "Zaman bağımsız olarak, türlerin multiplayer mı singleplayer mı yoksa ikisi birden mi oludğunu gösteren ve satışa göre sıralayan tablo."
+    columns:
+      - name: genre
+        description: "Temizlenmiş ana oyun türü."
+      - name: total_game
+        description: "Tarih boyunca bu türde çıkan toplam oyun sayısı."
+      - name: total_revenue
+        description: "Tarih boyunca bu türün elde ettiği toplam tahmini ciro."
+      - name: total_sales
+        description: "Tarih boyunca bu türün sattığı toplam kopya sayısı."
+      - name: gameplay_type
+        description: "Oyunun multiplayer mı singleplayer mı yoksa ikis birden mi olup olmadığını gösteren kolon."
+
+  # =============================================================================
+  # 2. BEFORE MART KATMANI (Analiz Öncesi Geniş Birleştirme)
+  # =============================================================================
+
+  - name: games_genres_sales_revenues
+    description: "Her bir oyunun türü, fiyatı ve hesaplanmış satış verilerinin bir araya getirildiği detaylı analiz tablosu."
+    columns:
+      - name: appid
+        description: "Oyunun Steam ID'si."
+      - name: name
+        description: "Oyunun adı."
+      - name: price
+        description: "Oyunun satış fiyatı (USD)."
+      - name: release_date
+        description: "Yayın tarihi."
+      - name: detailed_genre_group
+        description: "Oyunun ait olduğu ana tür grubu (Indie ayrımı yapılmış detaylı tür)."
+      - name: estimated_revenue_usd
+        description: "Oyunun tahmini cirosu (Tahmini Satış x Fiyat)."
+      - name: estimated_sales
+        description: "Oyunun tahmini satış adedi (Katsayılar ile hesaplanmış)."
+
+  - name: insights_of_genre_by_year
+    description: "Türlerin yıllara göre performansını (Oyun sayısı, Ciro, Satış) gösteren zaman serisi tablosu."
+    columns:
+      - name: genre
+        description: "Oyun türü grubu."
+      - name: release_date
+        description: "Zaman ekseni (Yıl veya Tarih bazlı)."
+      - name: total_games
+        description: "O dönem çıkan oyun sayısı."
+      - name: total_revenue
+        description: "O dönem elde edilen toplam ciro."
+      - name: total_sales
+        description: "O dönem yapılan toplam satış."
+
+  # =============================================================================
+  # 3. INTERMEDIATE KATMANI (Hesaplamalar, Segmentasyon ve Temizlik)
+  # =============================================================================
+  - name: int_applications_with_publishers
+    description: >
+      Ana oyun verilerinin yayıncı bilgileriyle zenginleştirildiği ara tablodur.
+      Bir oyunun birden fazla yayıncısı varsa, oyun her yayıncı için ayrı bir satırda tekrarlanır (1-to-Many).
+      Yayıncı bazlı performans ve ciro analizleri için optimize edilmiştir.
+    columns:
+      - name: appid
+        description: "Oyunun Steam ID'si."
+      
+      - name: name
+        description: "Oyunun adı."
+      
+      - name: metacritic_score
+        description: "Eleştirmen puanı."
+      
+      - name: release_date
+        description: "Yayın tarihi."
+      
+      - name: mat_initial_price_usd
+        description: "USD cinsinden fiyat."
+      
+      - name: system_req_level
+        description: "Donanım gereksinim seviyesi (Low/Medium/High)."
+      
+      - name: publisher_id
+        description: "Oyunu yayınlayan firmanın ID'si."
+      
+      - name: publisher_name
+        description: "Oyunu yayınlayan firmanın adı."
+      
+      - name: estimated_sales
+        description: "Tahmini satış adedi."
+      
+      - name: estimated_revenue_usd
+        description: "Tahmini ciro."
+          
+      - name: genre_name
+        description: "Oyunun tür bilgisi."
+  - name: games_details
+    description: >
+      Oyunların ticari segmentlere (AAA, Indie, Old vb.) ayrıldığı ve satış çarpanlarının (Multiplier)
+      uygulanarak tahmini gelirlerin hesaplandığı ana motor tablodur.
+    columns:
+      - name: appid
+        description: "Oyun ID."
+      - name: name
+        description: "Oyun adı."
+      - name: release_date
+        description: "Yayın tarihi."
+      - name: type
+        description: "Uygulama tipi (Game, DLC)."
+      - name: is_free
+        description: "Ücretsiz mi?"
+      - name: price
+        description: "Fiyat bilgisi."
+      - name: cpu_min_brand
+        description: "İşlemci markası (Intel/AMD)."
+      - name: gpu_min_brand
+        description: "Ekran kartı markası (Nvidia/AMD)."
+      - name: system_req_level
+        description: "RAM miktarına göre donanım seviyesi (Low/Medium/High/Outlier)."
+      - name: genre_name
+        description: "Oyunun sahip olduğu tüm türlerin birleştirilmiş ham hali."
+      - name: segment
+        description: "Oyunun ticari segmenti (Indie, AAA, Old, Viral)."
+      - name: estimated_sales
+        description: >
+          Segmente göre belirlenen çarpan ile hesaplanmış satış adedi.
+          (Katsayılar: Old=x50, AAA=x20, Viral=x25, Indie ve Others=x15).
+      - name: estimated_revenue
+        description: "Tahmini satış adedi ile fiyatın çarpılması sonucu bulunan ciro."
+
+  - name: genre_cleaned_v2
+    description: "Türlerin (Genre) temizlenip 'Detailed Genre Group' (Indie Action vb.) olarak hiyerarşik gruplandığı tablo."
+    columns:
+      - name: appid
+        description: "Oyun ID."
+      - name: name
+        description: "Oyun adı."
+      - name: orjinal_karma
+        description: "Veri setinden gelen orijinal karmaşık tür verisi."
+      - name: detailed_genre_group
+        description: "Temizlenmiş, önceliklendirilmiş ve gruplanmış ana tür."
+
+  - name: applications_language
+    description: "Oyunların dil desteği ve yerelleştirme analiz tablosu."
+    columns:
+      - name: appid
+        description: "Oyun ID."
+      - name: clean_languages
+        description: "Regex ile temizlenmiş diller listesi."
+      - name: language_count
+        description: "Desteklenen toplam dil sayısı."
+      - name: has_full_audio
+        description: "Tam seslendirme var mı? (1/0)."
+      - name: supports_turkish
+        description: "Türkçe dil desteği var mı? (1/0)."
+
+  - name: liking_rate
+    description: "Oyunların kullanıcı incelemelerine göre beğeni oranları."
+    columns:
+      - name: appid
+        description: "Oyun ID."
+      - name: total_reviews
+        description: "Toplam inceleme sayısı."
+      - name: positive_reviews
+        description: "Olumlu inceleme sayısı."
+      - name: like_ratio
+        description: "Beğeni oranı (Pozitif / Toplam)."
+  - name: system_req
+    description: >
+      Oyunların sistem gereksinimleri (özellikle RAM) ile ticari başarıları (Satış ve Ciro)
+      arasındaki korelasyonu analiz etmek için oluşturulmuş özel tablodur.
+      "Düşük sistem isteyen oyunlar daha mı çok satıyor?" sorusunun cevabı buradadır.
+    columns:
+      - name: appid
+        description: "Oyunun benzersiz Steam kimlik numarası."
+      - name: game_name
+        description: "Oyunun adı (Orijinal 'name' sütunundan yeniden adlandırıldı)."
+      - name: release_date
+        description: "Oyunun yayınlanma tarihi."
+      - name: ram_min_gb
+        description: "Minimum RAM gereksinimi (GB cinsinden sayısal değer)."
+      - name: ram_rec_gb
+        description: "Önerilen RAM gereksinimi (GB cinsinden sayısal değer)."
+      - name: system_req_level
+        description: "Minimum RAM miktarına göre belirlenen donanım seviyesi (Low, Medium, High).Outlier değerler analizde kullanılmamıştır"
+      - name: estimated_sales
+        description: "Oyunun ait olduğu segmente (Indie, AAA vb.) göre hesaplanmış tahmini toplam satış adedi."
+      - name: estimated_revenue_usd
+        description: "Tahmini satış adedi ve oyun fiyatı üzerinden hesaplanan toplam ciro (USD)."
+  # =============================================================================
+  # 4. STAGING KATMANI (Ham Veri ve İlk Temizlik)
+  # =============================================================================
+
+  - name: applications
+    description: "Ham veri (Source) üzerine yapılan ilk teknik temizlik (Regex, Donanım, Fiyat Dönüşümü)."
+    columns:
+      - name: release_date
+        description: "Yayın tarihi."
+      - name: appid
+        description: "Oyun ID."
+      - name: name
+        description: "Oyun adı."
+      - name: type
+        description: "Tip (Game/DLC)."
+      - name: is_free
+        description: "Ücretsizlik durumu."
+      - name: required_age
+        description: "Yaş sınırı."
+      - name: metacritic_score
+        description: "Metacritic puanı."
+      - name: recommendations_total
+        description: "Toplam tavsiye sayısı."
+      - name: mat_supports_windows
+        description: "Windows desteği."
+      - name: mat_supports_mac
+        description: "Mac desteği."
+      - name: mat_supports_linux
+        description: "Linux desteği."
+      - name: release_year
+        description: "Yayın yılı."
+      - name: mat_initial_price_usd
+        description: "USD cinsinden başlangıç fiyatı."
+      - name: mat_final_price_usd
+        description: "USD cinsinden satış fiyatı."
+      - name: ram_min_gb
+        description: "Temizlenmiş Minimum RAM (GB)."
+      - name: ram_rec_gb
+        description: "Temizlenmiş Önerilen RAM (GB)."
+      - name: cpu_brand_min
+        description: "Temizlenmiş CPU Markası."
+      - name: cpu_brand_rec
+        description: "Temizlenmiş Önerilen CPU Markası."
+      - name: gpu_brand_min
+        description: "Temizlenmiş GPU Markası."
+      - name: gpu_brand_rec
+        description: "Temizlenmiş Önerilen GPU Markası."
+      - name: system_req_level
+        description: "Donanım seviyesi (Low/Medium/High/Outliner)."
+      - name: gameplay_type
+        description: "Oyunun multiplayer mı singleplayer mı yoksa ikis birden mi olup olmadığını gösteren kolon."
+  - name: reviews
+    description: "Kullanıcı incelemeleri ham verisi (Sentiment analizi için kaynak)."
+    columns:
+      - name: review_id
+        description: "Yorum ID."
+      - name: appid
+        description: "Oyun ID."
+      - name: author_steamid
+        description: "Yazarın ID'si."
+      - name: language
+        description: "Yorumun dili."
+      - name: review_text
+        description: "Yorum metni."
+      - name: timestamp_created
+        description: "Yorum tarihi (Timestamp)."
+      - name: voted_up
+        description: "Öneri durumu (True/False)."
+      - name: votes_up
+        description: "Yorumun aldığı beğeni sayısı."
+      - name: steam_purchase
+        description: "Steam'den satın alma durumu (True/False)."
+      - name: received_for_free
+        description: "Ücretsiz mi alındı?"
+  - name: publishers
+    description: "Steam üzerindeki yayıncı firmaların (Electronic Arts, Ubisoft vb.) kimlik ve isim listesi."
+    columns:
+      - name: id
+        description: "Yayıncının benzersiz ID'si (Primary Key)."
+      - name: publisher_name
+        description: "Yayıncının adı (Orijinal 'name' sütunu yeniden adlandırıldı)."
+  - name: application_publishers
+    description: "Hangi oyunun hangi yayıncıya ait olduğunu gösteren bağlantı (Junction) tablosu. Çoktan-çoğa ilişkiyi yönetir."
+    columns:
+      - name: appid
+        description: "Oyunun ID'si."
+      - name: publisher_id
+        description: "Yayıncının ID'si."
