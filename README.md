@@ -64,12 +64,28 @@ Github deposunda yer alan nihai proje dosyaları:
 
 ---
 
-## 📈 Öne Çıkan İçgörüler
-Yapılan analizler sonucunda elde edilen kritik bulgular:
+## 📊 Veriye Dayalı Temel İçgörüler (Key Insights)
 
-1.  **Enflasyonist Baskı:** Ortalama oyun fiyatları son 4 yılda %22 artış göstererek $10 bandını aşmıştır.
-2.  **Donanım Maliyeti:** "Yüksek Sistem Gereksinimi" talep eden oyunlar, ortalama piyasa fiyatından %60 daha yüksek etiketlenmektedir.
-3.  **Kalite Yanılgısı:** Fiyat ile Metacritic puanı arasında güçlü bir korelasyon (0.23) bulunamamıştır. Yüksek fiyat, yüksek oyuncu memnuniyetini garanti etmemektedir.
+240.000'den fazla oyun verisi üzerinde yapılan EDA (Keşifçi Veri Analizi) ve Makine Öğrenmesi çalışmaları sonucunda aşağıdaki kritik pazar dinamikleri tespit edilmiştir:
+
+### 1. 💰 Oyun Sektöründe Enflasyonist Baskı
+Veri seti 2021-2025 dönemini kapsadığında, ortalama oyun fiyatlarında belirgin bir artış trendi gözlemlenmiştir.
+* **Bulgu:** 2021 yılında **$8.28** olan ortalama oyun fiyatı, 2025 projeksiyonlarında **$10.15** seviyesine ulaşmıştır.
+* **Sonuç:** Sektörde son 4 yılda **%22'nin üzerinde** bir fiyat artışı yaşanmıştır. Bu durum, "Premium" ve yüksek prodüksiyonlu oyunların pazar payını artırdığını göstermektedir.
+
+### 2. 🖥️ Donanım Maliyeti Fiyata Doğrudan Yansıyor
+Fiyat tahmin modelimizde (Machine Learning) en belirleyici özniteliklerden biri **Sistem Gereksinimleri** olmuştur.
+* **Bulgu:** "Yüksek (High)" donanım gereksinimi talep eden oyunlar, ortalama piyasa fiyatından **yaklaşık %60 daha yüksek** bir etiketle satışa sunulmaktadır.
+* **Sonuç:** Grafik kalitesi ve işlemci yükü, bir oyunun fiyatını belirleyen en güçlü teknik göstergedir.
+
+### 3. 📉 Fiyat-Kalite Paradoksu
+Yaygın inanışın aksine, oyunun pahalı olması oyuncular tarafından beğenileceği anlamına gelmemektedir.
+* **Bulgu:** Oyun fiyatı (`price`) ile Metacritic puanı (`metacritic_score`) arasındaki korelasyon katsayısı **0.23 (Zayıf Pozitif)** olarak hesaplanmıştır.
+* **Sonuç:** Yüksek fiyat, yüksek kalite garantisi vermemektedir. Oyuncular fiyat etiketinden bağımsız olarak oynanış deneyimine odaklanmaktadır.
+
+### 4. 🚀 Pazarın Üstel Büyümesi
+* **Bulgu:** Oyun yayınlanma sıklığı zaman serisi analizinde (Time Series) üstel (exponential) bir büyüme göstermektedir.
+* **Sonuç:** Pazar doygunluğu artarken, özellikle bağımsız (Indie) geliştiriciler için "görünürlük" (discoverability) sorunu, üretim maliyetinden daha kritik bir problem haline gelmiştir.
 
 ---
 
