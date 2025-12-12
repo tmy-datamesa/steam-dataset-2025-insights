@@ -34,7 +34,6 @@ Proje, "Modern Data Stack" prensiplerine uygun olarak bulut tabanlı bir mimarid
 
 ### 🔹 Veri Bilimi & Analitik
 * **Python & SQL:** EDA (Keşifçi Veri Analizi), Veri Temizleme, Dönüşümler.
-* **Machine Learning:** NLP (Doğal Dil İşleme) dahil olmak üzere fiyat tahmin algoritmaları.
 * **Google Colab:** Kodlama ve model geliştirme ortamı.
 
 ### 🔹 Görselleştirme & Yönetim
