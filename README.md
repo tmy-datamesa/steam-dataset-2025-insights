@@ -1,53 +1,53 @@
-# 🎮 Steam Market Analytics & Price Prediction (2025)
+# 🎮 Steam Pazar Analizi ve Fiyat Tahminleme (2025)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)
 ![Pandas](https://img.shields.io/badge/Library-Pandas-150458)
-![Status](https://img.shields.io/badge/Status-Completed-green)
+![Status](https://img.shields.io/badge/Durum-Tamamland%C4%B1-green)
 
-## 📌 Project Overview
-This project analyzes the Steam gaming market using the **2025 Dataset** comprising over 240,000 games. The goal is to uncover market trends, understand pricing strategies, and build machine learning models to predict game prices based on features like system requirements, genres, and developer reputation.
+## 📌 Proje Özeti
+Bu proje, 240.000'den fazla oyun verisini içeren **Steam 2025 Veri Seti** kullanılarak oyun sektörüne yönelik kapsamlı bir pazar analizi sunmaktadır. Projenin temel amacı; pazar trendlerini belirlemek, fiyatlandırma stratejilerini analiz etmek ve oyunların sistem gereksinimleri, türleri ve yayıncı özellikleri gibi öznitelikleri kullanarak **satış fiyatını tahmin eden bir Makine Öğrenmesi modeli** geliştirmektir.
 
-This repository contains the work of **Team 6** as part of the Data Science Bootcamp.
+Bu çalışma, Data Science Bootcamp kapsamında **Team 6** tarafından hazırlanmıştır.
 
-## 📂 Repository Structure
+## 📂 Dosya Yapısı
 
-* `notebooks/01_market_trend_forecast.ipynb`: Time-series analysis and forecasting of game release trends.
-* `notebooks/02_price_prediction_model.ipynb`: Machine Learning regression model to predict game prices.
-* `reports/steam_market_analysis_presentation.pdf`: Detailed visualization report and business insights (PDF).
+* `notebooks/01_pazar_buyume_tahmini.ipynb`: Oyun yayınlanma trendlerinin zaman serisi analizi ve gelecek projeksiyonu.
+* `notebooks/02_fiyat_tahmin_modeli.ipynb`: Oyun fiyatlarını tahmin eden Makine Öğrenmesi (Regresyon) modeli.
+* `reports/steam_pazar_analizi_sunumu.pdf`: Detaylı veri görselleştirmeleri ve iş içgörülerini içeren proje sunumu.
 
-## 🚀 Key Features & Methodology
+## 🚀 Öne Çıkan Özellikler ve Metodoloji
 
-### 1. Data Analysis (EDA) & Visualization
-* Analyzed the exponential growth of game releases from 2014 to 2025.
-* Investigated the relationship between **System Requirements** and **Price**.
-* Evaluated the price trends across different genres (Indie vs. AAA).
+### 1. Keşifçi Veri Analizi (EDA) ve Görselleştirme
+* 2014-2025 yılları arasında oyun yayınlanma sayısındaki üstel artış analiz edildi.
+* **Sistem Gereksinimleri** ve **Fiyat** arasındaki güçlü ilişki görselleştirildi.
+* Indie (Bağımsız) ve AAA oyunların fiyatlandırma stratejileri karşılaştırıldı.
 
-### 2. Machine Learning Models
-* **Price Prediction Model:** Developed a regression model to estimate the `mat_initial_price_usd`.
-    * *Features Used:* Release Year, Genre, System Requirements (RAM/GPU), Developer.
-    * *Algorithm:* Random Forest Regressor / XGBoost (Check your notebook for exact model).
-* **Market Forecasting:** Time-series analysis to predict future game release volumes.
+### 2. Makine Öğrenmesi Modelleri
+* **Fiyat Tahmin Modeli:** Oyunun `mat_initial_price_usd` (başlangıç fiyatı) değerini tahmin etmek için Regresyon modelleri geliştirildi.
+    * *Kullanılan Öznitelikler (Features):* Çıkış Yılı, Tür (Genre), Minimum RAM/GPU gereksinimi, Geliştirici.
+    * *Algoritma:* Random Forest Regressor / XGBoost.
+* **Pazar Tahmini:** Gelecek yıllarda platforma eklenecek oyun hacmini öngören zaman serisi analizi yapıldı.
 
-## 📊 Key Insights
-* **Inflation in Gaming:** The average game price has risen from **$8.28 (2021)** to **$10.15 (2025)**.
-* **Hardware Cost:** There is a strong correlation between high system requirements and higher pricing tiers.
-* **Price vs. Quality:** Data shows only a weak correlation (0.23) between price and Metacritic scores, suggesting higher price does not guarantee higher critical acclaim.
+## 📊 Temel İçgörüler
+* **Oyun Enflasyonu:** Ortalama oyun fiyatları **2021'de $8.28** iken **2025'te $10.15** seviyesine yükselmiştir.
+* **Donanım Maliyeti:** Yüksek sistem gereksinimi isteyen oyunlar, düşük sistem isteyenlere göre belirgin şekilde daha yüksek fiyatla pazara girmektedir.
+* **Fiyat-Kalite Paradoksu:** Fiyat ile Metacritic puanları arasında sadece zayıf bir korelasyon (0.23) bulunmuştur; yani yüksek fiyat her zaman yüksek beğeni anlamına gelmemektedir.
 
-## 🛠️ Tech Stack
-* **Language:** Python
-* **Data Manipulation:** Pandas, NumPy
-* **Visualization:** Matplotlib, Seaborn, Looker Studio
-* **Machine Learning:** Scikit-Learn
-* **Warehousing:** Google BigQuery (Project Infrastructure)
+## 🛠️ Kullanılan Teknolojiler
+* **Dil:** Python
+* **Veri İşleme:** Pandas, NumPy
+* **Görselleştirme:** Matplotlib, Seaborn, Looker Studio
+* **Makine Öğrenmesi:** Scikit-Learn
+* **Veri Ambarı:** Google BigQuery (Altyapı)
 
-## 👥 Team Members
-* **Tümay Turhan** - [LinkedIn Profile Link]
+## 👥 Takım Üyeleri
+* **Tümay Turhan** - [LinkedIn Profil Linkin]
 * Atakan Can
 * Berkay Turhan
 * D. Hazal Tuncay
 
-## 🔧 How to Run
-1. Clone the repository:
+## 🔧 Nasıl Çalıştırılır?
+1. Repoyu klonlayın:
    ```bash
-   git clone [https://github.com/username/steam-market-analytics-2025.git](https://github.com/username/steam-market-analytics-2025.git)
+   git clone [https://github.com/kullaniciadi/steam-market-analytics-2025.git](https://github.com/kullaniciadi/steam-market-analytics-2025.git)
