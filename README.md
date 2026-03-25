@@ -21,6 +21,8 @@ Bu proje, **240.000'den fazla oyun verisi** barındıran Steam 2025 veri seti ü
 
 ### 3. İş Zekası (BI) & Dashboard
 - **Looker Studio:** [Canlı Dashboard](https://lookerstudio.google.com/reporting/14eafbaa-cbb1-4a15-baf2-8e5f128a12e3) üzerinden dinamik analiz sunumu.
+<img width="1194" height="892" alt="image" src="https://github.com/user-attachments/assets/f9a6dc42-9468-4b7d-b79a-0e3b536150ad" />
+<img width="1491" height="1119" alt="image" src="https://github.com/user-attachments/assets/974d3430-21ae-45b3-b58d-68afffcffdca" />
 
 ---
 
